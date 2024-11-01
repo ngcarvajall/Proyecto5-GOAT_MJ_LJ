@@ -1,0 +1,31 @@
+Equipo,Nombre_comun,Codigo_equipo,Posicion,Partidos,Victorias,Derrotas,Porcentaje_vic
+Boston Celtics,Celtics,BOS,1,82,64,18,0.78
+Denver Nuggets,Nuggets,DEN,2,82,57,25,0.695
+Oklahoma City Thunder,Thunder,OKC,3,82,57,25,0.695
+Minnesota Timberwolves,Timberwolves,MIN,4,82,56,26,0.683
+Los Angeles Clippers,Clippers,LAC,5,82,51,31,0.622
+Dallas Mavericks,Mavericks,DAL,6,82,50,32,0.61
+New York Knicks,Knicks,NYK,7,82,50,32,0.61
+Milwaukee Bucks,Bucks,MIL,8,82,49,33,0.598
+New Orleans Pelicans,Pelicans,NOP,9,82,49,33,0.598
+Phoenix Suns,Suns,PHX,10,82,49,33,0.598
+Cleveland Cavaliers,Cavaliers,CLE,11,82,48,34,0.585
+Indiana Pacers,Pacers,IND,12,82,47,35,0.573
+Los Angeles Lakers,Lakers,LAL,13,82,47,35,0.573
+Orlando Magic,Magic,ORL,14,82,47,35,0.573
+Philadelphia 76ers,76ers,PHI,15,82,47,35,0.573
+Golden State Warriors,Warriors,GSW,16,82,46,36,0.561
+Miami Heat,Heat,MIA,17,82,46,36,0.561
+Sacramento Kings,Kings,SAC,18,82,46,36,0.561
+Houston Rockets,Rockets,HOU,19,82,41,41,0.5
+Chicago Bulls,Bulls,CHI,20,82,39,43,0.476
+Atlanta Hawks,Hawks,ATL,21,82,36,46,0.439
+Brooklyn Nets,Nets,BKN,22,82,32,50,0.39
+Utah Jazz,Jazz,UTA,23,82,31,51,0.378
+Memphis Grizzlies,Grizzlies,MEM,24,82,27,55,0.329
+Toronto Raptors,Raptors,TOR,25,82,25,57,0.305
+San Antonio Spurs,Spurs,SAS,26,82,22,60,0.268
+Charlotte Hornets,Hornets,CHA,27,82,21,61,0.256
+Portland Trail Blazers,Trail Blazers,POR,28,82,21,61,0.256
+Washington Wizards,Wizards,WAS,29,82,15,67,0.183
+Detroit Pistons,Pistons,DET,30,82,14,68,0.171
