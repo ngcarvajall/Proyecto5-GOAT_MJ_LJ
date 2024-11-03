@@ -6,10 +6,10 @@ tabla_lastdance_mj  = """
                                 Posicion int unique not null,
                                 Partidos int,
                                 Victorias int, 
-                                Derrotas int
-                                Porcentaje_vic float
-                                );
-                                """
+                                Derrotas int,
+                                PCTVIC float
+);
+"""
 
 tabla_lastdance_lj  = """
                                 CREATE TABLE IF NOT EXISTS Tabla_2024 (
@@ -19,8 +19,8 @@ tabla_lastdance_lj  = """
                                 Posicion int unique not null,
                                 Partidos int,
                                 Victorias int, 
-                                Derrotas int
-                                Porcentaje_vic float
+                                Derrotas int,
+                                PCTVIC float
                                 );
                                 """
 
@@ -225,7 +225,7 @@ salarios_mj = """
                         REFERENCES Temporadas_MJ (Id_temporada),
                    );"""
 
-salarios_mj = """
+salarios_lj = """
                    CREATE TABLE IF NOT EXISTS salarios_lj (
                    team_code varchar(10),
                    salario int,
