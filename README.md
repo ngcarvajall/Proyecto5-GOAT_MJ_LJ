@@ -29,4 +29,6 @@ Este análisis permitirá una comprensión profunda de cómo cada jugador ha imp
 ## Uso del Proyecto
 Este README y el proyecto en su conjunto están diseñados para ofrecer una base sólida para comprender las estadísticas y logros de Michael Jordan y LeBron James, presentando sus logros en el contexto de sus equipos y remuneraciones a lo largo del tiempo.
 
+## Próximos Pasos
+Tener en consideración franquicias que estuvieron liderando con equipos durante los años en activos de ambos jugadores, para tomar en consideración los enfrentamientos y la dificultad de conseguir un Campeonato durante sus temporadas vigentes.
 ---
