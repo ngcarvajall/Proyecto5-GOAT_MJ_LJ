@@ -11,6 +11,12 @@ El objetivo de este proyecto es proporcionar una visión comprensiva de la carre
 - **APIs**: Datos de cada jugador en sus temporadas en activo y la lista de equipos al final de sus carreras.
 - **Páginas web**: Información adicional sobre estadísticas y trayectoria de cada jugador.
 
+He utilizado 2 APIs y 2 páginas webs para conseguir toda la información:
+- **Salarios** : [Salarios](https://hoopshype.com/player/michael-jordan/salary/)
+- **Franquicias** : [Franquicias](https://www.basketball-reference.com/teams/)
+- **BasketAPI** : obtenida desde RapidAPI [BasketAPI](https://rapidapi.com/fluis.lacasse/api/basketapi1)
+- **NBAAPI** : obtenida a través de una conexión directa desde Python
+
 ## Estructura de Datos
 Para facilitar la comparación, hemos creado una tabla que organiza las temporadas en las que ambos jugadores estuvieron activos. Esta tabla conecta sus temporadas regulares, su desempeño en playoffs, sus títulos de campeón y sus salarios anuales. Además, cada temporada se asocia con las franquicias de la NBA en las que jugaron.
 
