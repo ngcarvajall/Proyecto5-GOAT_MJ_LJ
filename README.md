@@ -37,4 +37,3 @@ Este README y el proyecto en su conjunto están diseñados para ofrecer una base
 
 ## Próximos Pasos
 Tener en consideración franquicias que estuvieron liderando con equipos durante los años en activos de ambos jugadores, para tomar en consideración los enfrentamientos y la dificultad de conseguir un Campeonato durante sus temporadas vigentes.
----
