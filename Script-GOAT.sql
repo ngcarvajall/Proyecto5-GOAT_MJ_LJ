@@ -13,9 +13,11 @@ ON cm.id_resultado = pm.id_resultado
 WHERE pm.id_resultado = 1;
 
 -- Salario histórico LJ
-SELECT *
+SELECT sl.team_code, salario, salario_actual, sl.id_temporada, tl.season 
 FROM salarios_lj sl 
-ORDER BY id_temporada ASC ;
+INNER JOIN temporadas_lj tl 
+ON sl.id_temporada = tl.id_temporada 
+ORDER BY sl.id_temporada ASC ;
 
 -- Salario acumulado LJ
 SELECT sum(salario_actual), team_code, count(id_temporada) 
@@ -51,7 +53,7 @@ ON f.team_code = t.team_code
 WHERE tl.season = '2023-24' ;
 
 -- Ultima temporada de MJ y su impacto en el equipo
-SELECT tm.id_temporada, trm.team_code, t.partidos,  player_age, trm.gp AS partidos_jugados, t.partidos, trm.min AS minutos_jugados, trm.reb, trm.ast, trm.stl, trm.blk, trm.pts, t.victorias, t.derrotas 
+SELECT tm.id_temporada, trm.team_code,t.partidos,  player_age, trm.gp AS partidos_jugados, t.partidos, trm.min AS minutos_jugados, trm.reb, trm.ast, trm.stl, trm.blk, trm.pts, t.victorias, t.derrotas 
 FROM temporadas_mj tm 
 INNER JOIN temp_regular_mj trm 
 ON tm.id_temporada = trm.id_temporada 
@@ -101,15 +103,19 @@ FROM franquicias f
 WHERE team_code IN ('CLE', 'MIA', 'LAL');
 
 -- Partidos LeBron por equipo y sus puntos
-SELECT team_code, sum(gp) AS partidos, count(id_temporada) AS temporadas, sum(pts) AS puntos_aportados 
+SELECT team_code, sum(gp) AS partidos, count(id_temporada) AS temporadas, sum(pts) AS puntos_aportados, round(avg(gp))
 FROM temp_regular_lj trl 
 GROUP BY team_code ;
 
 -- Partidos MJ por equipo y sus puntos
-SELECT team_code, sum(gp) partidos, count(id_temporada) AS temporadas, sum(pts) AS puntos_aportados 
+SELECT team_code, sum(gp) partidos, count(id_temporada) AS temporadas, sum(pts) AS puntos_aportados, round(avg(gp))
 FROM temp_regular_mj trm
 GROUP BY team_code ;
 
+SELECT *
+FROM temp_regular_lj trl ;
+
+-- Campeonatos por franquicia y lo que aportó LJ
 SELECT tl.team_code, count(pl.id_resultado) AS campeonatos, f.champ 
 FROM temp_regular_lj trl 
 INNER JOIN temporadas_lj tl 
@@ -127,6 +133,7 @@ GROUP BY tl.team_code, f.champ ;
 SELECT *
 FROM playoffs_lj pl  ;
 
+-- Campeonatos por franquicia y lo que aportó MJ
 SELECT 
     tm.team_code, 
     count(pm.id_resultado) AS campeonatos, 
@@ -146,6 +153,7 @@ WHERE
 GROUP BY 
     tm.team_code, f.champ;
 
+-- Trayectoria en playoffs de LJ finales, runner-up y campenato
 SELECT 
     team_code,
     COUNT(CASE WHEN id_resultado = 0 THEN 1 END) AS contendiente,
@@ -155,6 +163,41 @@ FROM
     playoffs_lj
 GROUP BY 
     team_code;
-   
+
+-- Trayectoria en playoffs de MJ runner-up y campeonato
+SELECT team_code,
+	count(CASE WHEN id_resultado = 0 THEN 1 end) AS contendiente,
+	count(CASE WHEN id_resultado = 1 THEN 1 end) AS campeonato
+FROM playoffs_mj pm 
+GROUP BY team_code ;
+
+-- Est temp_regular LJ
+
+SELECT tl.id_temporada , tl.team_code, gp, w, l, w_l_pct , round(min) , fg_pct , reb, ast, blk, pts
+FROM temp_regular_lj trl 
+INNER JOIN temporadas_lj tl 
+ON trl.id_temporada = tl.id_temporada 
+;
+
+
+-- Est playoffs LJ
+SELECT id_temporada, team_code,g, min, fg_pct , reb, ast, stl, blk, pts, id_resultado 
+FROM playoffs_lj pl ;
+
+-- Est playoffs MJ
+SELECT id_temporada , team_code, g, min, fg_pct , reb, ast , stl, blk, pts, id_resultado 
+FROM playoffs_mj pm ;
+
+
+-- Est temp_regular MJ
+SELECT tm.id_temporada, tm.team_code , gp , round(min) fg_pct, reb, ast, blk, pts
+FROM temp_regular_mj trm 
+INNER JOIN temporadas_mj tm 
+ON trm.id_temporada = tm.id_temporada 
+;
+
 SELECT *
-FROM campeonatos_lj cl ;
+FROM temporadas_lj tl ;
+SELECT *
+FROM playoffs_lj pl 
+INNER JOIN 
