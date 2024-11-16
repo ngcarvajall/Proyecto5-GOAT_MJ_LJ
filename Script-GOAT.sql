@@ -25,9 +25,12 @@ FROM salarios_lj sl
 GROUP BY team_code;
 
 -- Salario histórico MJ
-SELECT *
+SELECT sm.team_code, salario, salario_actual, sm.id_temporada, tm.season 
 FROM salarios_mj sm 
-ORDER BY id_temporada ASC ;
+INNER JOIN temporadas_mj tm 
+ON sm.id_temporada = tm.id_temporada 
+ORDER BY sm.id_temporada ASC ;
+
 
 -- Salario acumulado MJ
 SELECT sum(salario_actual), team_code, count(id_temporada) 
@@ -53,7 +56,7 @@ ON f.team_code = t.team_code
 WHERE tl.season = '2023-24' ;
 
 -- Ultima temporada de MJ y su impacto en el equipo
-SELECT tm.id_temporada, trm.team_code,t.partidos,  player_age, trm.gp AS partidos_jugados, t.partidos, trm.min AS minutos_jugados, trm.reb, trm.ast, trm.stl, trm.blk, trm.pts, t.victorias, t.derrotas 
+SELECT tm.id_temporada, t.posicion, trm.team_code,t.partidos,  player_age, trm.gp AS partidos_jugados, t.partidos, trm.min AS minutos_jugados, trm.reb, trm.ast, trm.stl, trm.blk, trm.pts, t.victorias, t.derrotas 
 FROM temporadas_mj tm 
 INNER JOIN temp_regular_mj trm 
 ON tm.id_temporada = trm.id_temporada 
