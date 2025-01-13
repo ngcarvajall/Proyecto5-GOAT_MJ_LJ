@@ -1,4 +1,5 @@
-# Comparación de Michael Jordan y LeBron James
+![GOAT](GOAT-NBA.webp)
+# 📊 Comparación de Michael Jordan y LeBron James
 
 ## Descripción del Proyecto
 Este proyecto se centra en la comparación detallada entre las dos leyendas del baloncesto, Michael Jordan y LeBron James. Utilizando datos de dos APIs y dos páginas web, hemos recopilado y analizado sus estadísticas de carrera, incluyendo las temporadas regulares, los playoffs y su última temporada, también conocida como "Last Dance".

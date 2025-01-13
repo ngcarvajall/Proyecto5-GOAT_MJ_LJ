@@ -119,7 +119,7 @@ SELECT *
 FROM temp_regular_lj trl ;
 
 -- Campeonatos por franquicia y lo que aportó LJ
-SELECT tl.team_code, count(pl.id_resultado) AS campeonatos, f.champ 
+SELECT tl.team_code, count(pl.id_resultado) AS campeonatos, f.champ
 FROM temp_regular_lj trl 
 INNER JOIN temporadas_lj tl 
 ON trl.id_temporada = tl.id_temporada 
@@ -201,6 +201,7 @@ ON trm.id_temporada = tm.id_temporada
 
 SELECT *
 FROM temporadas_lj tl ;
+
 SELECT *
 FROM playoffs_lj pl 
 INNER JOIN 
